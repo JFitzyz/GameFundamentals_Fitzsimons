@@ -38,17 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 245285489
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Foreground
-    uniqueID: 4013578183
-    locked: 0
-  - name: Furniture
-    uniqueID: 1475249225
+  - name: Platform
+    uniqueID: 663540083
     locked: 0
   - name: Sprite
-    uniqueID: 1123438791
+    uniqueID: 861968757
+    locked: 0
+  - name: HUD
+    uniqueID: 602724641
     locked: 0
   m_RenderingLayers:
   - Default
