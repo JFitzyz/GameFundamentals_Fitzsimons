@@ -1,10 +1,7 @@
 # Game Fundamentals Project
 
 Updates:
-- Added new level to scene with owned assets
-- Added movement logic
-- Added enemies
-- Removed old level that used assets not owned by me
+- Added shooting mechanics for Milestone 3
 
 Asset Credits
 - Johnathon (All sprite assets and map design)
