@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
 
     InputAction moveAction;
     InputAction jumpAction;
+    InputAction attackAction;
 
     private void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerMovement : MonoBehaviour
         // Find the references to the "Move" and "Jump" actions
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     void Update()
