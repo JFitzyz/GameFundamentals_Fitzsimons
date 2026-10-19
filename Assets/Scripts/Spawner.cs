@@ -4,6 +4,8 @@ using UnityEngine.Rendering;
 
 
 // Declaring a class makes a new type of thing we can instantiate, in this case a type of MonoBehaviour
+// Object is the thing itself, reference is just says where the thing is.
+// Null reference means it points to nothing.
 public class Spawner : MonoBehaviour
 {
     public GameObject prefabToSpawn;
