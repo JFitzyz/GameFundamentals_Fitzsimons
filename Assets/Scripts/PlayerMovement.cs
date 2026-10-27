@@ -8,12 +8,11 @@ public class PlayerMovement : MonoBehaviour
     //Movement speed in m/s
     public float moveSpeed = 5f;
     public float jumpSpeed = 6f;
-    public bool isGrounded;
+    public bool isGrounded = false;
     public Rigidbody2D rb;
 
     InputAction moveAction;
     InputAction jumpAction;
-    InputAction attackAction;
 
     private void Start()
     {
@@ -22,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
         // Find the references to the "Move" and "Jump" actions
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
-        attackAction = InputSystem.actions.FindAction("Attack");
     }
 
     void Update()
