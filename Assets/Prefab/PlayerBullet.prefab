@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 6747257892370720923}
   - component: {fileID: -2743793883264255930}
   - component: {fileID: -3931521370680042380}
+  - component: {fileID: -4955916944577472309}
   m_Layer: 0
   m_Name: PlayerBullet
-  m_TagString: Untagged
+  m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +176,16 @@ MonoBehaviour:
   playerBullet: {fileID: 6684726834509296625}
   enemyBullet: {fileID: 4712046131730125722, guid: 5390c3032aaad5d4c8983b81babdc7fe, type: 3}
   speed: 20
+--- !u!114 &-4955916944577472309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6684726834509296625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aad0b9057d732d3438d17761e4f72a4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerBullet
+  playerDamage: 5
