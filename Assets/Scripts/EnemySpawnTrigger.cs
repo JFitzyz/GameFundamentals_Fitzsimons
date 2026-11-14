@@ -13,7 +13,7 @@ public class EnemySpawnTrigger : MonoBehaviour
     {
         PlayerCharacterControls player = collision.GetComponent<PlayerCharacterControls>();
 
-        if(player != null)
+        if (player != null)
         {
             spawner.isSpawning = true;
         }

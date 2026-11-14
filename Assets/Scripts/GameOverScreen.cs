@@ -30,4 +30,9 @@ public class GameOverScreen : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1f;
     }
+
+    public void MainMenu()
+    {
+
+    }
 }
