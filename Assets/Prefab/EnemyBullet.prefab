@@ -173,6 +173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Shooting
   velocity: {x: 100, y: 0}
   rb: {fileID: 8507935853815580132}
+  playerBullet: {fileID: 6684726834509296625, guid: a30e1b023a713644f8087341aac08912, type: 3}
+  enemyBullet: {fileID: 4712046131730125722}
   speed: 20
 --- !u!114 &-1138401203156460812
 MonoBehaviour:
