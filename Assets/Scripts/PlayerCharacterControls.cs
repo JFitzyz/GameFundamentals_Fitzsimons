@@ -17,11 +17,18 @@ public class PlayerCharacterControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 aimValue = aimAction.ReadValue<Vector2>();
-        gun.transform.right = aimValue;
+        //Vector2 aimValue = aimAction.ReadValue<Vector2>();
+        //gun.transform.right = aimValue;
 
-        gun.isSpawning = attackAction.IsPressed(); // gun.IsSpawning match attackAction.IsPressed
+        //gun.isSpawning = attackAction.IsPressed(); // gun.IsSpawning match attackAction.IsPressed
 
-        Debug.DrawRay(gun.transform.position, attackAction.ReadValue<Vector2>());
+        if(attackAction.IsPressed())
+        {
+            gun.isSpawning = true;
+        }
+        else
+        {
+            gun.isSpawning = false;
+        }
     }
 }

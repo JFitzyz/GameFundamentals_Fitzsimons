@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 2327341308549539603}
   - component: {fileID: 8507935853815580132}
   - component: {fileID: 990251703789095107}
+  - component: {fileID: -1138401203156460812}
   m_Layer: 0
-  m_Name: Ruby_0 1
-  m_TagString: Untagged
+  m_Name: EnemyBullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,3 +171,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 173aa1ae4962429439abfa5154f420c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Shooting
+  velocity: {x: 100, y: 0}
+  rb: {fileID: 8507935853815580132}
+  speed: 20
+--- !u!114 &-1138401203156460812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4712046131730125722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47247f42a5ba746448a0dd5bb6a10beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDamage
+  damage: 5
