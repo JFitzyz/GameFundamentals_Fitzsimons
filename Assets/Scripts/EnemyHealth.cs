@@ -34,13 +34,13 @@ public class EnemyHealth : MonoBehaviour
 
     public void EnemyDamage(float playerDamage)
     {
-        enemyHealth -= playerBullet.playerDamage;
+        enemyHealth -= playerDamage;
         updateEnemyHealth = true;
 
         if (enemyHealth <= 0 && isEnemyDead == false)
         {
             isEnemyDead = true;
-            Destroy(enemy);
+            Destroy(gameObject);
         }
     }
 
@@ -49,6 +49,7 @@ public class EnemyHealth : MonoBehaviour
         if (gameObject.tag == "PlayerBullet")
         {
             isEnemyHit = true;
+            Destroy(enemy);
         }
     }
 }
