@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenuUI;
     public GameOverScreen gameOverScreen;
+    //public GameObject optionsMenuUI;
     public GameObject player;
     public Button playButton;
     public Button quitButton;
@@ -37,5 +38,14 @@ public class MainMenu : MonoBehaviour
     public void GameOverMainMenu(GameOverScreen gameOverScreen)
     {
         mainMenuUI.SetActive(true);
+    }
+    //public void OptionsMenu()
+    //{
+    //    optionsMenuUI.SetActive(true);
+    //}
+    public void Quit()
+    {
+        Application.Quit();
+        Debug.Log("Application quit!");
     }
 }
