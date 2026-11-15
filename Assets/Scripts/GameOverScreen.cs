@@ -5,6 +5,7 @@ public class GameOverScreen : MonoBehaviour
 {
 
     public GameObject gameOverUI;
+    public GameObject mainMenuUI;
     public GameObject player;
     public Health health;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,6 +34,8 @@ public class GameOverScreen : MonoBehaviour
 
     public void MainMenu()
     {
-
+        gameOverUI.SetActive(false);
+        mainMenuUI.SetActive(true);
+        Time.timeScale = 1f;
     }
 }
