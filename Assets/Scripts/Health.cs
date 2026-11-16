@@ -12,8 +12,9 @@ public class Health : MonoBehaviour, IDamageable
     public float maxHealth = 100f;
 
     public GameOverScreen gameManager;
+    public PlayerDeathSound playerDeathSound;
     public GameObject player;
-    private bool isDead;
+    public bool isDead;
     bool isHit = false;
     float time = 0.4f;
     public bool updateHealth = false;
@@ -21,6 +22,7 @@ public class Health : MonoBehaviour, IDamageable
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        playerDeathSound = GetComponent<PlayerDeathSound>();
     }
 
     // Update is called once per frame

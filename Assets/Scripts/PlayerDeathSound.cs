@@ -1,9 +1,12 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class PlayerDeathSound : MonoBehaviour
 {
     public GameObject player;
+    public GameObject gameOverUI;
+    public GameOverScreen gameOverScreen;
+
+    private EnemyDamage enemyDamage;
     public AudioSource deathAudio;
     public Health playerHealth;
     public float soundDelay = 0f;
@@ -11,8 +14,9 @@ public class PlayerDeathSound : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        gameOverScreen = GetComponent<GameOverScreen>();
         deathAudio = GetComponent<AudioSource>();
-        playerHealth = GetComponent<Health>();
+
     }
 
     // Update is called once per frame
@@ -23,14 +27,24 @@ public class PlayerDeathSound : MonoBehaviour
             soundDelay += Time.deltaTime;
         }
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    //public void OnCollisionEnter2D(Collision2D collision)
+    //{
+    //    if (playerHealth.health <= 0 && playerHealth.updateHealth == true)
+    //    {
+    //        deathAudio.Play();
+    //        hasPlayed = true;
+    //        Debug.Log("You died lolz gg");
+    //    }
+    //}
+    public void gameOver()
     {
-        GameObject gameObject = collision.gameObject;
-
-        if (playerHealth.health <= 0)
+        
+        if (gameOverScreen.isActive == true)
         {
+            gameOverScreen.gameOverUI.SetActive(true);
             deathAudio.Play();
             hasPlayed = true;
+            Debug.Log("You died lol GGS");
         }
     }
 }

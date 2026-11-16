@@ -818,11 +818,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4486666288532176395, guid: 00c2a471b8eeaff468b5b4ba315431ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.46
+      value: -5.87
       objectReference: {fileID: 0}
     - target: {fileID: 4486666288532176395, guid: 00c2a471b8eeaff468b5b4ba315431ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6228101
+      value: -1.56
       objectReference: {fileID: 0}
     - target: {fileID: 4486666288532176395, guid: 00c2a471b8eeaff468b5b4ba315431ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5214,8 +5214,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverScreen
   gameOverUI: {fileID: 1819288473}
   mainMenuUI: {fileID: 0}
+  deathAudio: {fileID: 1252875258}
   player: {fileID: 419665416}
   health: {fileID: 1252875250}
+  isActive: 0
 --- !u!1 &949989340
 GameObject:
   m_ObjectHideFlags: 0
@@ -6701,7 +6703,9 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   gameManager: {fileID: 939820873}
+  playerDeathSound: {fileID: 0}
   player: {fileID: 419665416}
+  isDead: 0
   updateHealth: 0
 --- !u!114 &1252875251
 MonoBehaviour:
@@ -6716,6 +6720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HUD
   healthBar: {fileID: 949989343}
+  enemyHealthBar: {fileID: 0}
 --- !u!114 &1252875257
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6729,9 +6734,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeathSound
   player: {fileID: 419665416}
+  gameOverUI: {fileID: 1819288473}
+  gameOverScreen: {fileID: 939820873}
   deathAudio: {fileID: 1252875258}
   playerHealth: {fileID: 1252875250}
-  soundDelay: 0
+  soundDelay: 1
   hasPlayed: 0
 --- !u!82 &1252875258
 AudioSource:

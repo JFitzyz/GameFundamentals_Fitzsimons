@@ -6,8 +6,10 @@ public class GameOverScreen : MonoBehaviour
 
     public GameObject gameOverUI;
     public GameObject mainMenuUI;
+    public AudioSource deathAudio;
     public GameObject player;
     public Health health;
+    public bool isActive = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +25,9 @@ public class GameOverScreen : MonoBehaviour
     public void gameOver()
     {
         gameOverUI.SetActive(true);
+        deathAudio.Play();
+        Debug.Log("Audio played!");
+        isActive = true;
         Time.timeScale = 0f;
     }
 
