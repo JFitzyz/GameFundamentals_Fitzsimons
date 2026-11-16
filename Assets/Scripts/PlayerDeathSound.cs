@@ -1,5 +1,9 @@
 using UnityEngine;
 
+// NO LONGER IN USE FOR NOW. WAS FOR THE GAME OVER SOUND INITIALLY, HOWEVER MOVED THAT TO GAME OVER UI SCRIPT.
+// THIS WILL BE USED FOR DAMAGE TAKEN, POWER UP NOISES, ETC.
+// NEEDS TO BE RE-WRITTEN! :)
+
 public class PlayerDeathSound : MonoBehaviour
 {
     public GameObject player;
