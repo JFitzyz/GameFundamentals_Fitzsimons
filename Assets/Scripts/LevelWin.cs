@@ -23,7 +23,7 @@ public class LevelWin : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       if (gameObject.tag == "LevelEnd")
+        if (collision.gameObject.tag == "Player")
         {
             endOfLevelUI.SetActive(true);
         }
