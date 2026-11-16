@@ -27,15 +27,6 @@ public class PlayerDeathSound : MonoBehaviour
             soundDelay += Time.deltaTime;
         }
     }
-    //public void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (playerHealth.health <= 0 && playerHealth.updateHealth == true)
-    //    {
-    //        deathAudio.Play();
-    //        hasPlayed = true;
-    //        Debug.Log("You died lolz gg");
-    //    }
-    //}
     public void gameOver()
     {
         

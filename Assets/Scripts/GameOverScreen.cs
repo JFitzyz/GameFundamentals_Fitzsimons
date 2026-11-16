@@ -26,7 +26,6 @@ public class GameOverScreen : MonoBehaviour
     {
         gameOverUI.SetActive(true);
         deathAudio.Play();
-        Debug.Log("Audio played!");
         isActive = true;
         Time.timeScale = 0f;
     }
