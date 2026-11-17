@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1063716785809403078}
   - component: {fileID: 688820985001126071}
   - component: {fileID: 8015532495851322272}
+  - component: {fileID: -9074020867442955869}
+  - component: {fileID: 8592895334901083047}
   m_Layer: 0
   m_Name: Guardian
   m_TagString: Enemy
@@ -122,7 +124,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 4
 --- !u!70 &688820985001126071
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -176,6 +178,37 @@ MonoBehaviour:
   maxEnemyHealth: 100
   enemy: {fileID: 6684726834509296625, guid: a30e1b023a713644f8087341aac08912, type: 3}
   updateEnemyHealth: 0
+--- !u!114 &-9074020867442955869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630793169316044114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c036eeef93c9af42abf934aabb88129, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  moveSpeed: 1
+  jumpSpeed: 6
+  isGrounded: 0
+  rb: {fileID: 1063716785809403078}
+  moveInput: {x: 1, y: 0}
+  isJumpRequested: 0
+--- !u!114 &8592895334901083047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8630793169316044114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96b34ac7d5d537243b522c012812c5f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  movement: {fileID: -9074020867442955869}
 --- !u!1001 &2760070729733906306
 PrefabInstance:
   m_ObjectHideFlags: 0

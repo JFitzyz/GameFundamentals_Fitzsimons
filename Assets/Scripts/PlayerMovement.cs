@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 public class PlayerMovement : MonoBehaviour
 {
     // These variables are to hold the Action references
@@ -10,37 +8,36 @@ public class PlayerMovement : MonoBehaviour
     public float jumpSpeed = 6f;
     public bool isGrounded = false;
     public Rigidbody2D rb;
-
-    InputAction moveAction;
-    InputAction jumpAction;
-
+    public Vector2 moveInput;
+    public bool isJumpRequested = false;
     private void Start()
     {
-        // Get reference to the RigidBody2D component attached to this game object
         rb = GetComponent<Rigidbody2D>();
-        // Find the references to the "Move" and "Jump" actions
-        moveAction = InputSystem.actions.FindAction("Move");
-        jumpAction = InputSystem.actions.FindAction("Jump");
     }
 
     void Update()
     {
-        // Read the "Move" action value, which is a 2D vector
-        Vector2 moveValue = moveAction.ReadValue<Vector2>();
-        // your movement code here
-        //transform.Translate(new Vector3(moveValue.x, moveValue.y * 0.01f));
-
-        rb.linearVelocityX = moveValue.x * moveSpeed;
-
-        if (jumpAction.WasPressedThisFrame() && isGrounded)
+        rb.linearVelocityX = moveInput.x * moveSpeed;
+        if (isJumpRequested)
         {
-            rb.linearVelocityY = jumpSpeed;
-            isGrounded = false;
+            Jump();
         }
     }
 
+    public void Jump()
+    {
+        if (isGrounded)
+        {
+            rb.linearVelocityY = jumpSpeed;
+            isJumpRequested = false;
+        }
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isGrounded = true;
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isGrounded = false;
     }
 }

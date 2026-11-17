@@ -4,31 +4,31 @@ using UnityEngine.InputSystem;
 public class PlayerCharacterControls : MonoBehaviour
 {
     public Spawner gun = null;
+    public PlayerMovement movement;
 
     InputAction attackAction;
-    InputAction aimAction;
+    InputAction moveAimAction;
+    InputAction jumpAction;
 
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
-        aimAction = InputSystem.actions.FindAction("Move");
+        moveAimAction = InputSystem.actions.FindAction("Move");
+        jumpAction = InputSystem.actions.FindAction("Jump");
+        movement = GetComponent<PlayerMovement>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Vector2 aimValue = aimAction.ReadValue<Vector2>();
-        //gun.transform.right = aimValue;
 
-        //gun.isSpawning = attackAction.IsPressed(); // gun.IsSpawning match attackAction.IsPressed
+        gun.isSpawning = attackAction.IsPressed();
+        Vector2 moveAimValue = moveAimAction.ReadValue<Vector2>();
 
-        if(attackAction.IsPressed())
+        movement.moveInput = moveAimValue;
+        if (jumpAction.WasPressedThisFrame())
         {
-            gun.isSpawning = true;
-        }
-        else
-        {
-            gun.isSpawning = false;
+            movement.isJumpRequested = true;
         }
     }
 }
