@@ -16,7 +16,6 @@ public class PlayerCharacterControls : MonoBehaviour
         attackAction = InputSystem.actions.FindAction("Attack");
         moveAimAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
-        aimAction = InputSystem.actions.FindAction("Look");
         movement = GetComponent<PlayerMovement>();
     }
 
@@ -26,11 +25,13 @@ public class PlayerCharacterControls : MonoBehaviour
 
         gun.isSpawning = attackAction.IsPressed();
         Vector2 moveAimValue = moveAimAction.ReadValue<Vector2>();
+        gun.transform.right = moveAimValue;
 
         movement.moveInput = moveAimValue;
         if (jumpAction.WasPressedThisFrame())
         {
             movement.isJumpRequested = true;
         }
+
     }
 }
