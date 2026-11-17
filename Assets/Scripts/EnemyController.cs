@@ -18,5 +18,9 @@ public class EnemyController : MonoBehaviour
             movement.moveInput *= -1;
             timer = 2;
         }
+        if (movement.isJumpRequested == false)
+        {
+            movement.Jump();
+        }
     }
 }

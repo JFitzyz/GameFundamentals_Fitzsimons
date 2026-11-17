@@ -9,12 +9,14 @@ public class PlayerCharacterControls : MonoBehaviour
     InputAction attackAction;
     InputAction moveAimAction;
     InputAction jumpAction;
+    InputAction aimAction;
 
     private void Start()
     {
         attackAction = InputSystem.actions.FindAction("Attack");
         moveAimAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        aimAction = InputSystem.actions.FindAction("Look");
         movement = GetComponent<PlayerMovement>();
     }
 
